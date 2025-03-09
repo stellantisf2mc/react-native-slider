@@ -864,13 +864,19 @@ export class Slider extends PureComponent<SliderProps, SliderState> {
                                 renderThumbComponent
                                     ? {}
                                     : {
+                                          width: 12,
+                                          height: 18,
+                                          borderTopLeftRadius: i ==0 ? 12 : 0,
+                                          borderTopRightRadius: i==0 ? 0 : 12,
+                                          borderBottomLeftRadius: i==0 ? 12 : 0,
+                                          borderBottomRightRadius: i==0 ? 0 : 12,
                                           backgroundColor: thumbTintColor,
                                           ...thumbStyle,
                                       },
                                 {
                                     transform: [
                                         {
-                                            translateX: value,
+                                            translateX: i == 0 ? Animated.add(value, new Animated.Value(-5)) : Animated.add(value, new Animated.Value(5)),
                                         },
                                         {
                                             translateY: 0,
