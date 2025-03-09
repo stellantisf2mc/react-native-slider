@@ -58,6 +58,7 @@ export type SliderProps = {
     trackRightPadding?: number;
     trackStyle?: ViewStyle;
     value?: Animated.Value | number | Array<number>;
+    isRangeSlider?: boolean;
     /**
      * Allows the start from the zero value. The minimum value track can be rendered in two directions from zero.
      * Can be applied only with a single numeric value, negative minimum value, and positive maximum value.

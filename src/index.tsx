@@ -876,8 +876,12 @@ export class Slider extends PureComponent<SliderProps, SliderState> {
                                 {
                                     transform: [
                                         {
-                                            translateX: i == 0 ? Animated.add(value, new Animated.Value(-5)) : Animated.add(value, new Animated.Value(5)),
-                                        },
+                                            translateX: this.props.isRangeSlider
+                                              ? i === 0
+                                                ? Animated.add(value, new Animated.Value(-5))
+                                                : Animated.add(value, new Animated.Value(5))
+                                              : value,
+                                          },
                                         {
                                             translateY: 0,
                                         },
