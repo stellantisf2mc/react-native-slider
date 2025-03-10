@@ -23,7 +23,6 @@
         "build": "patch-package && tsc",
         "clean": "rimraf lib",
         "lint": "eslint --fix --cache --cache-location ./node_modules/.cache/eslint .",
-        "prepublish": "yarn clean && yarn build",
         "postpublish": "./tagLatest.js && git push && git push --tags",
         "storybook": "start-storybook --config-dir .storybook",
         "test": "patch-package && yarn lint && yarn typescript",
